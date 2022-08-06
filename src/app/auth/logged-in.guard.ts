@@ -22,7 +22,7 @@ export class LoggedInGuard implements CanActivate, CanActivateChild {
 
     public async check() {
         try {
-            await this.authService.getCurrentUser();
+            //await this.authService.getCurrentUser();
         } catch (e) {
             this.router.navigate(['/auth/login']);
             window.scroll(0,0);

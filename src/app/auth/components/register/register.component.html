@@ -1,1 +1,28 @@
-<p>register works!</p>
+<div class="container">
+
+    <form [formGroup]="form" class="form" (ngSubmit)="submit()" [autocomplete]="false">
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input formControlName="nombre" matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput>
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline">
+            <mat-label>Contraseña</mat-label>
+            <input formControlName="password" matInput [type]="hidePassword ? 'password' : 'text'">
+            <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword">
+                <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+
+        <button class="submit-button" color="primary" mat-raised-button  type="submit">
+            REGISTRARSE
+        </button>
+
+    </form>  
+
+</div>

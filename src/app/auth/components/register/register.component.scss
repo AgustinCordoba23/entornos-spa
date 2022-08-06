@@ -1,0 +1,42 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 500px;
+        border: 1px solid grey;
+        box-shadow: 0 0 1vh rgba(0, 0, 0, 0.15);
+        padding: 20px;
+
+        mat-form-field{
+            width: 100%;
+        }
+    
+        .submit-button {
+            height: 55px;
+            background: #EB5B20;
+            
+            mat-icon{
+                margin-bottom: 3px;
+            }
+        }
+
+        .link{
+            margin-bottom: 15px;
+            
+            .a{
+                color:#EB5B20; 
+            }
+            
+        }
+    }
+}
+ 
+
+

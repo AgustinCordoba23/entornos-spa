@@ -36,7 +36,8 @@ export class AuthService {
         if (this.userService.getUser() && !force) {
             return this.userService.getUser();
         }
-        let response = await this.apiService.getData(`/me`);
+
+        let response = await this.apiService.getData(`/me`,);
         this.userService.setState(response.me);
 
         return response;
@@ -48,9 +49,9 @@ export class AuthService {
             password : password,
         });
 
-        this.setAccessToken(response.data.access_token);
+        this.setAccessToken(response.access_token);
 
-        await this.getCurrentUser();
+        //await this.getCurrentUser();
     }
 
     public async puedeNavegar(uri: string | null): Promise<boolean> {
@@ -59,7 +60,7 @@ export class AuthService {
         }
         let e = [
             '/home',
-            '/auth/login', 
+            '/login', 
         ].filter((u) => {
             return u === uri;
         });
