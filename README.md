@@ -1,15 +1,17 @@
 # Entornos Gráficos [UTN - FRRo]
 
-Servidor Frontend basado en Angular para el Trabajo Práctico Integrador 2022 C2.
+Repositorio de servidor Frontend basado en Angular para el Trabajo Práctico Integrador 2022 C2.
 <br />
 <br />
 
-Pasos para correrlo en local:
+Instalar Angular:
 1. `sudo apt install npm`
 2. `sudo npm install -g @angular/cli`
 3. Actualizar Node.js
-4. `npm install`
-5. Correr con: `ng serve --open`
+4. (en el repo) `npm install`
+<br />
+Correr:
+1.`ng serve --open`
 
 <br />
 <br />
