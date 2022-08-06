@@ -10,6 +10,7 @@ Instalar Angular:
 3. Actualizar Node.js
 4. (en el repo) `npm install`
 <br />
+
 Correr:
 1. `ng serve --open`
 
