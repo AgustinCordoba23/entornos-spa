@@ -17,7 +17,7 @@ Correr:
 <br />
 <br />
 
-Enpoint (no configurado aún): www.entornos-frro.tk
+Link a la SPA (no publicada aún): www.entornos-frro.tk
 
 
 
