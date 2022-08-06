@@ -11,7 +11,7 @@ Instalar Angular:
 4. (en el repo) `npm install`
 <br />
 Correr:
-1.`ng serve --open`
+1. `ng serve --open`
 
 <br />
 <br />
