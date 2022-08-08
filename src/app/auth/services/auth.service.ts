@@ -1,19 +1,12 @@
-import { AccesoInterface  } from '../models/acceso.model';
 import { ApiService       } from 'src/app/shared/services/api.service';
 import { Injectable       } from '@angular/core';
-import { Router           } from '@angular/router';
-import { UserService      } from './user.service';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
-    private _accessToken: string | null = null;
-
     constructor (
         private apiService  : ApiService,
-        private router      : Router,
-        private userService : UserService,
     ) { }
 
     public async register (name:string, email:string, password:string) {
