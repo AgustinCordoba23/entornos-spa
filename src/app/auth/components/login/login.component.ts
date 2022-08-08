@@ -41,5 +41,6 @@ export class LoginComponent implements OnInit {
 			this.form.get("password")?.value,
 		);
 		this.router.navigateByUrl('/home');
+        console.log("asd");
     }
 }
