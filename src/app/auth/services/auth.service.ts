@@ -24,90 +24,25 @@ export class AuthService {
         });
     }
 
-    get currentUser() {
-        return this.userService.getUser();
-    }
-
-    get accesos(): AccesoInterface[] {
-        return this.userService.getAccesos();
-    }
-
-    public async getCurrentUser(force: boolean = false): Promise<any> {
-        if (this.userService.getUser() && !force) {
-            return this.userService.getUser();
-        }
-
-        let response = await this.apiService.getData(`/me`,);
-        this.userService.setState(response.me);
-
-        return response;
-    }
-
     public async login(email:string,password:string) : Promise<void> {
         const response = await this.apiService.post("/login",{
             email    : email,
             password : password,
         });
 
-        this.setAccessToken(response.access_token);
-
-        //await this.getCurrentUser();
-    }
-
-    public async puedeNavegar(uri: string | null): Promise<boolean> {
-        if (uri === null) {
-            return true;
-        }
-        let e = [
-            '/home',
-            '/login', 
-        ].filter((u) => {
-            return u === uri;
-        });
-
-        if (e.length === 1) {
-            return true;
-        }
-
-        let accesos = await this.fetchAccesos();
-        return accesos.filter((row: any) => uri.startsWith(row.ruta)).length > 0;
-    }
-
-    public async fetchAccesos(): Promise<any> {
-        let accesos = this.userService.getAccesos();
-        
-        if (accesos) {
-            return accesos;
-        }
-        await this.getCurrentUser();
-        return this.userService.getAccesos();
-    }
-
-    public estaLogueado() : boolean {
-        if(this.currentUser){
-            return true;
-        }
-        return false;
+        localStorage.setItem('access_token', response.access_token);
+        localStorage.setItem('current_user', JSON.stringify(response.user));
     }
 
     public async logout() : Promise<any> {
-        try {
-            await this.apiService.post("/auth/logout",{});
-        } catch (e) {
+        await this.apiService.post("/logout",{});
 
-        }
-
-        this.removeSessionData();
-    }
-
-    public setAccessToken(value: string) : void {
-        localStorage.setItem('access_token', value);
-    }
-
-    public removeSessionData() : void {
-        this._accessToken = null;
-        this.userService.removeUserData();
         localStorage.removeItem('access_token');
+        localStorage.removeItem('current_user');
+    }
+
+    public async getCurrentUser() {
+        return localStorage.getItem('current_user');
     }
 
     public getAccessToken() : string | null {
