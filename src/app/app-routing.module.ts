@@ -3,29 +3,19 @@ import { NgModule              } from '@angular/core';
 import { RouterModule          } from '@angular/router';
 import { Routes                } from '@angular/router';
 import { ConstruccionComponent } from './shared/components/construccion/construccion.component';
+import { RouteGuard            } from './auth/route.guard';
 
 const routes: Routes = [
 
     {
         path: '',
-        //canActivate: [RouteGuard],
-        //canActivateChild: [RouteGuard],
-        children: [
-            {
-                path:'auth',
-                loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule), 
-            },
-            {
-                path: '',
-                pathMatch: 'full',
-                redirectTo: 'home',
-            },
-            {
-                path: 'home',
-                canActivate: [LoggedInGuard],
-                component: ConstruccionComponent,
-            }
-        ]
+        canActivate: [RouteGuard],
+        loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule), 
+    },
+    {
+        path: 'home',
+        canActivate: [LoggedInGuard],
+        component: ConstruccionComponent, //activar modulo cuando se realice
     },
 
 ];

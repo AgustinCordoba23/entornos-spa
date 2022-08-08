@@ -2,7 +2,9 @@ import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, Router, RouterSt
 import { Injectable  } from '@angular/core';
 import { AuthService } from './services/auth.service';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class RouteGuard implements CanActivate, CanActivateChild {
 
     constructor(
@@ -11,7 +13,7 @@ export class RouteGuard implements CanActivate, CanActivateChild {
     ) {}
 
     async canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        return this.check(state.url);
+        return this.check();
     }
 
     canActivate() {
@@ -20,15 +22,12 @@ export class RouteGuard implements CanActivate, CanActivateChild {
 
     private async check(url: string | null = null) {
 
-        let puedeNavegar = await this.authService.puedeNavegar(url);
-        
-        if (puedeNavegar === true) {
-            if (!this.authService.estaLogueado()) {
-                // this.router.navigateByUrl('/');
-                window.scroll(0,0);
-            }
+        if (this.authService.getAccessToken() != null){
+            this.router.navigate(['/home']);
+            return false;
+        } else{
+            return true;
         }
-        return puedeNavegar;
     }
 
 }

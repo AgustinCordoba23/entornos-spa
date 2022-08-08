@@ -6,7 +6,6 @@ import { environment       } from 'src/environments/environment';
 import { catchError, map   } from 'rxjs/operators';
 import { Observable        } from 'rxjs/internal/Observable';
 import { throwError        } from 'rxjs';
-import { MessagesService   } from './messages.service';
 import { Router            } from '@angular/router';
 import { SnackBarService   } from './snack-bar.service';
 import { QsSerializer      } from '../qs.serializer';
@@ -19,23 +18,9 @@ export class ApiService {
 
     constructor(
         private http     : HttpClient,
-        private messages : MessagesService,
         private snackBar : SnackBarService,
         private router   : Router,
     ) {
-    }
-
-    public logout() {
-        const options = this.observeResponse();
-
-        return this.http.post(environment.apiEndpoint + '/logout', {}, options);
-    }
-
-    observeResponse(options?: any) {
-        return {
-            observe: 'response',
-            ...options
-        }
     }
 
     public get(uri: string, params: any = {}): Observable<any> {
@@ -52,16 +37,6 @@ export class ApiService {
 
     public getData(uri: string, params: any = {}) {
         return this.get(uri, params).pipe(map((result:any)=>result.data)).toPromise();
-    }
-
-    public getAll(uri: string, params: any = {}): Promise<any> {
-        params['limit'] = 0;
-        return this.get(uri, params).toPromise();
-    }
-
-    public getAllData(uri: string, params: any = {}): Promise<any> {
-        params['limit'] = 0;
-        return this.getData(uri, params);
     }
 
     public post(uri: string, body: any, options?: any): Promise<any> {

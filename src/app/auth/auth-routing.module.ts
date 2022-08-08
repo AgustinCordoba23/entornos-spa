@@ -7,7 +7,17 @@ import { RouteGuard } from './route.guard';
 
 const routes: Routes = [
 
-    // Rutas con sesión.
+    // Rutas de acceso público
+    {
+        path: '',
+        component: LoginComponent
+    },
+    {
+        path: 'register',
+        component: RegisterComponent
+    },
+
+    // Rutas con sesión
     /*
     {
         path: '',
@@ -20,16 +30,6 @@ const routes: Routes = [
         ]
     },
     */
-
-    // Rutas de acceso público
-    {
-        path: 'login',
-        component: LoginComponent
-    },
-    {
-      path: 'register',
-      component: RegisterComponent
-  },
 
 ];
 
