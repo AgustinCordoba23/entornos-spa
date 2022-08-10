@@ -15,13 +15,13 @@ import { SpinnerService } from 'src/app/shared/services/spinner.service';
 })
 export class LoginComponent implements OnInit {
 
-    public form!            : FormGroup;
-    public hidePassword     : boolean = true;
+    public form! : FormGroup;
+    public hidePassword : boolean = true;
     
     constructor(
         private authService : AuthService,
-        private dialog      : MatDialog,
-        private router      : Router,
+        private dialog : MatDialog,
+        private router : Router,
     ){}
 
     public ngOnInit(): void {
@@ -30,16 +30,29 @@ export class LoginComponent implements OnInit {
 
     public setForm() : void {
 		this.form = new FormGroup({
-			email    : new FormControl(''),
+			email : new FormControl(''),
 			password : new FormControl(''),
 		});
  	}
 
     public async submit(){      
 		await this.authService.login(
-			this.form.get("email"   )?.value,
+			this.form.get("email")?.value,
 			this.form.get("password")?.value,
 		);
 		this.router.navigateByUrl('/home');
+
+        /* 
+            para hacer una peticion recordar importar en el constructor el api.service.ts que esta en shared/services,
+            luego hacer:
+            this.apiServe.METODO(
+                RUTA,
+                {
+                    PARAMETRO : VALOR,
+                    ...
+                }
+            )
+            notar que en este caso se llama a authSerive que en los metodos login y registrar carga el apiService
+        */
     }
 }

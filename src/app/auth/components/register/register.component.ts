@@ -31,12 +31,13 @@ export class RegisterComponent implements OnInit {
  	}
 
     public async submit(){      
-		await this.authService.register(
+		await this.authService.registrar(
 			this.form.get("nombre")?.value,
 			this.form.get("email")?.value,
 			this.form.get("password")?.value,
+			1 //este es el rol, un entero donde 1: admin, 2: responsable y 3: usuario
 		);
-		this.router.navigateByUrl('/auth/login');
+		this.router.navigateByUrl('/'); //redirecciona a /auth/login, ver archivos de routing para entender
     }
 
 }

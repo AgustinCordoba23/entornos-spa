@@ -9,11 +9,12 @@ export class AuthService {
         private apiService  : ApiService,
     ) { }
 
-    public async register (name:string, email:string, password:string) {
-        await this.apiService.post("/register",{
-            name : name,
+    public async registrar (nombre:string, email:string, password:string, rol: number) {
+        await this.apiService.post("/registrar",{
+            nombre : nombre,
             email : email,
             password : password,
+            rol : rol
         });
     }
 
@@ -24,18 +25,18 @@ export class AuthService {
         });
 
         localStorage.setItem('access_token', response.access_token);
-        localStorage.setItem('current_user', JSON.stringify(response.user));
+        localStorage.setItem('usuario_actual', JSON.stringify(response.usuario));
     }
 
     public async logout() : Promise<any> {
         await this.apiService.post("/logout",{});
 
         localStorage.removeItem('access_token');
-        localStorage.removeItem('current_user');
+        localStorage.removeItem('usuario_actual');
     }
 
     public async getCurrentUser() {
-        return localStorage.getItem('current_user');
+        return localStorage.getItem('usuario_actual');
     }
 
     public getAccessToken() : string | null {
