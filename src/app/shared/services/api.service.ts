@@ -97,7 +97,7 @@ export class ApiService {
                 this.snackBar.show(e.error.message);
             }
             if (e.status === 401) {
-                this.router.navigateByUrl('/auth/login');
+                this.router.navigateByUrl('/');
                 window.scroll(0,0);   
             }
             if (e.status === 403 && this.mostrarMensajes){
