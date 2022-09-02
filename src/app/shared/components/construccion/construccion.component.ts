@@ -9,13 +9,9 @@ import { ApiService } from '../../services/api.service';
 export class ConstruccionComponent implements OnInit {
 
   constructor(
-    private apiService  : ApiService,
   ) { }
 
   ngOnInit(): void {
-    this.apiService.post('/cambiar-password', {
-      nueva_password : "password",
-    })
   }
 
 }
