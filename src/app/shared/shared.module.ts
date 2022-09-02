@@ -4,7 +4,7 @@ import { ListadoDataSource      } from './listado.datasource';
 
 // App Services
 import { ApiService             } from './services/api.service';
-import { BearerTokenInterceptor } from './interceptors/bearer-token.interceptor';
+import { AccessTokenInterceptor } from './interceptors/access-token.interceptor';
 import { ConfirmService         } from './services/confirm.service';
 import { DeviceService          } from './services/device.service';
 import { MessagesService        } from './services/messages.service';
@@ -149,7 +149,7 @@ export class SharedModule {
                 [
                     {
                         provide: HTTP_INTERCEPTORS,
-                        useClass: BearerTokenInterceptor,
+                        useClass: AccessTokenInterceptor,
                         multi: true
                     },
                     

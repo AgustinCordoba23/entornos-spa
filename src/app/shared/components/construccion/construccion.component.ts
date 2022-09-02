@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-construccion',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConstruccionComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private apiService  : ApiService,
+  ) { }
 
   ngOnInit(): void {
+    this.apiService.post('/cambiar-password', {
+      nueva_password : "password",
+    })
   }
 
 }
