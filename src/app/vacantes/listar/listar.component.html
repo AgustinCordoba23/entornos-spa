@@ -6,8 +6,16 @@
 
         <mat-divider></mat-divider>
 
-        <div class="vacantes">
+        <div class="buscar">
+            <form [formGroup]="form" (ngSubmit)="buscar()">
+                <mat-form-field appearance="outline" class="fill-container">
+                        <input formControlName="catedra" matInput placeholder="Buscar por cátedra oferente..." autocomplete="off">
+                </mat-form-field>
+                <button mat-raised-button type="submit">Buscar</button>
+            </form>
+        </div>
 
+        <div class="vacantes">
             <div *ngFor="let vacante of vacantes" >
                 <div class="vacante-card" [class.opacity]="obtenerEstado(vacante.fecha_fin) == 'finalizada'">
                     <span class="card-titulo">{{vacante.catedra}}</span>
