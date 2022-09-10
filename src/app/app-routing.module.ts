@@ -2,7 +2,6 @@ import { LoggedInGuard         } from './auth/logged-in.guard';
 import { NgModule              } from '@angular/core';
 import { RouterModule          } from '@angular/router';
 import { Routes                } from '@angular/router';
-import { ConstruccionComponent } from './shared/components/construccion/construccion.component';
 import { RouteGuard            } from './auth/route.guard';
 
 const routes: Routes = [
@@ -15,7 +14,6 @@ const routes: Routes = [
     {
         path: '',
         loadChildren: () => import('./vacantes/vacantes.module').then(m => m.VacantesModule), 
-
     },
 
 ];

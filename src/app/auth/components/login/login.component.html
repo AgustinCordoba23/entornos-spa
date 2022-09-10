@@ -1,36 +1,6 @@
-<!--
-<div class="container">
-
-    <form [formGroup]="form" class="form" (ngSubmit)="submit()" [autocomplete]="false">
-        <mat-form-field appearance="outline">
-            <mat-label>Email</mat-label>
-            <input formControlName="email" matInput>
-        </mat-form-field>
-        
-        <mat-form-field appearance="outline">
-            <mat-label>Contraseña</mat-label>
-            <input formControlName="password" matInput [type]="hidePassword ? 'password' : 'text'">
-            <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword">
-                <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-        </mat-form-field>
-
-        <div class="link">
-            <a routerLink="/auth/register">¿No tienes cuenta? Registrese</a>
-        </div>
-
-        <button class="submit-button" color="primary" mat-raised-button  type="submit">
-            INGRESAR
-            <mat-icon>arrow_circle_right</mat-icon> 
-        </button>
-
-    </form>  
-</div>
--->
-
 <div class="pagina">
     <div class="imagen">
-        <img src="../../../../assets/images/login.png" alt="fondo-login">
+        <img src="../../../../assets/images/login.png" alt="imagen-login">
     </div>
 
     <div class="form">
@@ -41,12 +11,12 @@
             <form [formGroup]="form" class="form-box" (ngSubmit)="submit()" [autocomplete]="false">
                 <mat-form-field appearance="outline">
                     <mat-label>Email</mat-label>
-                    <input formControlName="email" matInput>
+                    <input formControlName="email" matInput required>
                 </mat-form-field>
                 
                 <mat-form-field appearance="outline">
                     <mat-label>Contraseña</mat-label>
-                    <input formControlName="password" matInput [type]="hidePassword ? 'password' : 'text'">
+                    <input formControlName="password" matInput [type]="hidePassword ? 'password' : 'text'" required>
                     <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword">
                         <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
@@ -63,6 +33,5 @@
             </form> 
         </div>
     </div>
-
 </div>
 

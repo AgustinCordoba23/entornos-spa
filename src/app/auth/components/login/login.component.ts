@@ -7,6 +7,7 @@ import { OnInit          } from '@angular/core';
 import { Router          } from '@angular/router';
 import { LocatorService } from 'src/app/shared/services/locator.service';
 import { SpinnerService } from 'src/app/shared/services/spinner.service';
+import { SnackBarService } from 'src/app/shared/services/snack-bar.service';
 
 @Component({
     selector : 'app-login',
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
     
     constructor(
         private authService : AuthService,
-        private dialog : MatDialog,
+        private snackBar : SnackBarService,
         private router : Router,
     ){}
 
@@ -35,11 +36,22 @@ export class LoginComponent implements OnInit {
 		});
  	}
 
-    public async submit(){      
-		await this.authService.login(
-			this.form.get("email")?.value,
-			this.form.get("password")?.value,
-		);
-		this.router.navigateByUrl('/');
+    public async submit(){
+        if(this.form.get("email")?.value == '' || this.form.get("password")?.value == ''){
+            return;
+        }
+
+        if(!this.form.get("email")?.value.includes('@')){
+            this.snackBar.show("El email no es una dirección de corre válida.");
+            return;
+        }
+
+        await this.authService.login(
+            this.form.get("email")?.value,
+            this.form.get("password")?.value,
+        );
+        
+        this.router.navigateByUrl('/');
+		
     }
 }
