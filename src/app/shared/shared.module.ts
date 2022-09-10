@@ -28,7 +28,6 @@ import { MatTabsModule          } from '@angular/material/tabs';
 import { ReactiveFormsModule    } from '@angular/forms';
 import { RouterModule           } from '@angular/router';
 
-
 // Material
 import { MatAutocompleteModule    } from '@angular/material/autocomplete';
 import { MatButtonModule          } from '@angular/material/button';
@@ -54,21 +53,22 @@ import { MatTableModule           } from '@angular/material/table';
 import { MatToolbarModule         } from '@angular/material/toolbar';
 import { MatExpansionModule       } from '@angular/material/expansion';
 import { MatDatepickerModule      } from '@angular/material/datepicker';
+
+//Componentes
 import { MessageComponent } from './components/message/message.component';
 import { ConfirmComponent } from './components/confirm/confirm.component';
 import { ConstruccionComponent } from './components/construccion/construccion.component';
-
-
+import { MenuComponent } from './components/menu/menu.component';
 @NgModule({
     providers: [
         SpinnerService,
     ],
     declarations: [
-    
-    MessageComponent,
-         ConfirmComponent,
-         ConstruccionComponent
-  ],
+        MessageComponent,
+        ConfirmComponent,
+        ConstruccionComponent,
+        MenuComponent
+    ],
     imports: [
         ApiService,
         CommonModule,
@@ -135,6 +135,9 @@ import { ConstruccionComponent } from './components/construccion/construccion.co
         SpinnerService,
         MatDatepickerModule, 
         MatNativeDateModule,
+        MenuComponent,
+        ConfirmComponent,
+        MessageComponent,
     ],
     schemas: [
         NO_ERRORS_SCHEMA,

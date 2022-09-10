@@ -36,7 +36,7 @@ export class AuthService {
     }
 
     public async getCurrentUser() {
-        return localStorage.getItem('usuario_actual');
+        return JSON.parse(localStorage.getItem('usuario_actual')!);
     }
 
     public getAccessToken() : string | null {
