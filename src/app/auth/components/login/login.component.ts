@@ -40,19 +40,6 @@ export class LoginComponent implements OnInit {
 			this.form.get("email")?.value,
 			this.form.get("password")?.value,
 		);
-		this.router.navigateByUrl('/home');
-
-        /* 
-            para hacer una peticion recordar importar en el constructor el api.service.ts que esta en shared/services,
-            luego hacer:
-            this.apiServe.METODO(
-                RUTA,
-                {
-                    PARAMETRO : VALOR,
-                    ...
-                }
-            )
-            notar que en este caso se llama a authSerive que en los metodos login y registrar carga el apiService
-        */
+		this.router.navigateByUrl('/');
     }
 }

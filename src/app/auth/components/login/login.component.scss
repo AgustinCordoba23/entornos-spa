@@ -1,3 +1,4 @@
+/*
 .container{
     display: flex;
     flex-direction: column;
@@ -36,6 +37,115 @@
         }
     }
 }
+*/
  
+.pagina{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
 
+    .imagen{
+        width: 50%;
+        display: flex;
+        height: 100vh;
+
+        img{
+            width:100%;
+            height:100%;
+        }
+    }
+
+    .form{
+        width: 50%;
+        background: #F0F2F5;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .form-box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 13px;
+
+            .titulo{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 22px;
+                line-height: 140%;
+                color: #344767;
+            }
+
+            .subtitulo{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 140%;
+                color: #7B809A;
+            }
+
+            .form-box {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+        
+                mat-form-field{
+                    width: 360px;
+                    height: 40px;
+                    margin-bottom: 25px;
+                }
+
+                ::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper{
+                    margin: 0;
+                }
+
+                ::ng-deep .mat-form-field-wrapper {
+                    padding: 0;
+                }
+
+                .submit-button{
+                    width: 360px;
+                    height: 40px;
+                    background: linear-gradient(180deg, #1A7F9D 0%, #00CA48 100%);
+                    border-radius: 8px;
+                    border: 0;
+                    margin-bottom: 10px;
+                    cursor: pointer;
+                }
+
+                .link{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 5px;
+
+                    .label{
+                        font-family: 'Roboto';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 140%;
+                        color: #7B809A;
+                    }
+
+                    .registrate{
+                        font-family: 'Roboto';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 140%;
+                        color: #1C819F;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+        }
+    }
+}
 
