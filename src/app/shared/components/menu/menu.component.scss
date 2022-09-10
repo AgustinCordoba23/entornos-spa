@@ -1,0 +1,113 @@
+.container{
+    width: 270px;
+    min-height: 100vh;
+    height: 100%;
+    background: linear-gradient(173.85deg, #1C819F 0%, #00CA48 100%);;
+    display: flex;
+    flex-direction: column;
+
+    img{
+        max-width: 100%;
+        height: 70px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 36px;
+        margin-top: 36px;
+    }
+
+    mat-divider{
+        border-top-color: white;
+    }
+
+    .usuario{
+        margin-top: 25px;
+        margin-bottom: 25px;
+        margin-left: 25px;
+        display: flex;
+        flex-direction: column;
+
+        .logo{
+            button{
+                background-color:white;
+                width: 51px;
+                height: 51px;
+                cursor: unset;
+                color: rgba(28, 129, 159, 1);
+
+                ::ng-deep .mat-button-wrapper{
+                    font-size: 32px;
+                    line-height: 18px;
+                }
+            }
+        }
+        
+        .nombre{
+            margin-top: 10px;
+            color: white;
+            font-weight: 600;
+            font-size: 16.48px;
+            line-height: 118.9%;
+        }
+
+        .rol{
+            margin-top: 5px;
+            color: white;
+            font-weight: 400;
+            font-size: 14.48px;
+            line-height: 118.9%;
+        }
+    }
+
+    .accesos{
+        margin-top: 25px;
+        margin-left: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .acceso{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-decoration: none;
+            cursor: pointer;
+
+            mat-icon{
+                margin-bottom: 5px;
+                color: white;
+                margin-right: 10px;
+            }
+
+            span{
+                font-weight: 600;
+                font-size: 16.48px;
+                line-height: 118.9%;
+                color: #FFFFFF;
+            }    
+        }
+    }
+
+    .usuario-deslogueado{
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+
+        .login-registro{
+            height: 40px;
+            width: 200px;
+            background: #0A3066;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 0;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 140%;
+        }
+    }
+
+    
+}

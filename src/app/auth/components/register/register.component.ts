@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SnackBarService } from 'src/app/shared/services/snack-bar.service';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -12,10 +13,12 @@ export class RegisterComponent implements OnInit {
 
 	public form!            : FormGroup;
     public hidePassword     : boolean = true;
+	public hideConfirmPassword : boolean = true;
 
 	constructor(
 		private authService : AuthService,
 		private router      : Router,
+		private snackBar    : SnackBarService,
 	) { }
 
 	ngOnInit(): void {
@@ -27,17 +30,40 @@ export class RegisterComponent implements OnInit {
 			nombre   : new FormControl(''),
 			email    : new FormControl(''),
 			password : new FormControl(''),
+			confirmarPassword : new FormControl(''),
+			rol : new FormControl(''),
 		});
  	}
 
-    public async submit(){      
+    public async submit(){    
+		if(this.form.get("email")?.value == '' || this.form.get("password")?.value == '' 
+			|| this.form.get("nombre")?.value == '' || this.form.get("confirmarPassword")?.value == ''){
+            return;
+        }
+
+        if(!this.form.get("email")?.value.includes('@')){
+            this.snackBar.show("El email no es una dirección de corre válida.");
+            return;
+        }
+
+		if(this.form.get("password")?.value != this.form.get("confirmarPassword")?.value){
+			this.snackBar.show("Las contraseñas no coinciden.");
+            return;
+		}
+
+		if(this.form.get("password")?.value.length < 6){
+			this.snackBar.show("La contraseña debe tener más de 6 caracteres.");
+            return;
+		}
+
 		await this.authService.registrar(
 			this.form.get("nombre")?.value,
 			this.form.get("email")?.value,
 			this.form.get("password")?.value,
-			1 //este es el rol, un entero donde 1: admin, 2: responsable y 3: usuario
+			this.form.get("rol")?.value,
 		);
-		this.router.navigateByUrl('/'); //redirecciona a /auth/login, ver archivos de routing para entender
+		this.router.navigateByUrl('/auth/login');
+		
     }
 
 }

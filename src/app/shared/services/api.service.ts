@@ -36,7 +36,7 @@ export class ApiService {
     }
 
     public getData(uri: string, params: any = {}) {
-        return this.get(uri, params).pipe(map((result:any)=>result.data)).toPromise();
+        return this.get(uri, params).pipe(map((result:any)=>result)).toPromise();
     }
 
     public post(uri: string, body: any, options?: any): Promise<any> {
@@ -93,11 +93,13 @@ export class ApiService {
 
     private handle(o: Observable<any>): Observable<ArrayBuffer> {
         return o.pipe(catchError((e: HttpErrorResponse)=> {
+            /*
             if (e.status === 422 && this.mostrarMensajes){
                 this.snackBar.show(e.error.message);
             }
-            if (e.status === 401) {
-                this.router.navigateByUrl('/');
+            */
+            if (e.status === 401 && this.mostrarMensajes) {
+                this.snackBar.show(e.error.message);
                 window.scroll(0,0);   
             }
             if (e.status === 403 && this.mostrarMensajes){

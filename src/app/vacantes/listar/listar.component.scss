@@ -1,0 +1,208 @@
+.pagina{
+    display: flex;
+    flex-direction: row;
+
+    .contenido{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .titulo{
+            margin-left: 50px;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 118.9%;
+            color: #666666;
+            margin-top: 50px;
+            margin-bottom: 45px;
+        }
+
+        mat-divider{
+            border-top-color: rgba(166, 170, 199, 0.5);
+        }
+
+        .buscar{
+            margin-top: 25px;
+            margin-bottom: 25px;
+            align-self: center;
+
+            form{
+                display: flex;
+                flex-direction: row;
+            }    
+            
+            mat-form-field{
+                width: 500px;
+                padding: 0;
+                height: 40px;
+                
+                input{
+                    padding-left: 5%;
+                    padding-top: 13px;
+                    height: 100%;
+                }
+            }
+    
+            ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+                background-color: white;
+                border-color: white;
+                border-radius: 20px 0px 0px 20px;
+                border: 0px;
+                box-shadow: 3px 4px 4px rgb(0 0 0 / 25%);
+                height: 40px;
+            }
+    
+            ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-end,
+            ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-start {
+                border-width: 0px !important;
+                color: transparent;
+            }
+    
+            ::ng-deep .mat-input-element::placeholder{
+                color: #5B5B5B;
+            }
+    
+            ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+                padding: 0;
+                border: 0px;
+            }
+    
+            ::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper{
+                margin: 0;
+            }
+        
+    
+            button{
+                width: 100px;
+                height: 40px;
+                border-radius: 0px 20px 20px 0px;
+                border-left: 1px solid rgba(166, 170, 199, 0.5);  
+                box-shadow: 3px 4px 4px rgb(0 0 0 / 25%);
+                color: #0A3066;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 20px;
+            }
+        }
+
+        .vacantes{
+            margin-top: 25px;
+            margin-left: 50px;
+            margin-right: 50px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 50px;
+
+            .opacity{
+                opacity: 0.5;        
+            }
+
+            .vacante-card{
+                margin-bottom: 40px;
+                margin-right: 5px;
+                width: 315px;
+                height: 250px;
+                box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+
+                .card-titulo{
+                    margin-left: 10px;
+                    margin-top: 15px;
+                    margin-bottom: 10px;
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 24px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .card-descripcion{
+                    margin-left: 10px;
+                    margin-top: 15px;
+                    margin-bottom: 10px;
+                    -webkit-box-orient: vertical;
+                    min-height: 40px;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 20px;
+                    letter-spacing: 0.25px;
+                }
+
+                .fecha{
+                    margin-left: 10px;
+                    margin-top: 15px;
+                    margin-bottom: 10px;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 20px;
+                    letter-spacing: 0.25px;
+                }
+
+                .ver{
+                    width: 230px;
+                    height: 40px;
+                    margin-top: 5px;
+                    align-self: center;
+                    background: linear-gradient(90deg, #46B090 0%, #1E97C6 100%);
+                    border: 0;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    border-radius: 10px;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 16px;
+                    text-align: center;
+                    letter-spacing: 1.25px;
+                    color: white;
+                    cursor: pointer;
+                }
+
+                .estado-en-curso{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 5px;
+                    justify-content: center;
+                    width: 120px;
+                    height: 35px;
+                    align-self: center;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 135%;
+                    color: #0A3066;
+                    background: #FFDEDC;
+                    border-radius: 10px;
+                    border: 0;
+                }
+
+                .estado-finalizada{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 5px;
+                    justify-content: center;
+                    width: 120px;
+                    height: 35px;
+                    align-self: center;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 135%;
+                    color: #7A2917;
+                    background: #FACDB4;;
+                    border-radius: 10px;
+                    border: 0;
+                }
+            }
+        }
+    }
+
+    
+}

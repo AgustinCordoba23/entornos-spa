@@ -1,0 +1,47 @@
+<div class="container">
+    <img src="../../../../assets/images/logo.png" alt="logo-utn">
+
+    <mat-divider></mat-divider>
+
+    <div *ngIf="rol!=0">
+        <div class="usuario">
+            <div class="logo">
+                <button mat-fab>
+                  {{nombre.substr(0,1).toUpperCase()}}
+                </button>
+            </div>
+            <span class="nombre">{{nombre}}</span>
+            <span class="rol">{{rolDescripcion}}</span>
+        </div>
+    
+        <mat-divider></mat-divider>
+
+        <div class="accesos">
+            <a class="acceso" *ngIf="rol==2" routerLink="/">
+                <mat-icon>add</mat-icon>
+                <span>Nueva Vacante</span>
+            </a>
+
+            <a class="acceso" routerLink="/">
+                <mat-icon>account_circle</mat-icon>
+                <span>Mi Cuenta</span>
+            </a>
+
+            <a class="acceso" (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Cerrar Sesión</span>
+            </a>
+        </div>
+    </div>
+
+    <div *ngIf="rol==0" class="usuario-deslogueado">
+        <button class="login-registro" type="submit" routerLink="/auth/login">
+            Iniciar sesión
+        </button>
+        <button class="login-registro" type="submit" routerLink="/auth/register">
+            Registro
+        </button>
+    </div>
+
+    
+</div>
