@@ -1,0 +1,145 @@
+.pagina{
+    display: flex;
+    flex-direction: row;
+
+    .contenido{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .titulo{
+            margin-left: 50px;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 118.9%;
+            color: #666666;
+            margin-top: 50px;
+            margin-bottom: 45px;
+        }
+
+        mat-divider{
+            border-top-color: rgba(166, 170, 199, 0.5);
+        }
+
+        .opacity{
+            opacity: 0.5;        
+            }
+
+        .vacantes{
+            margin-top: 25px;
+            margin-left: 50px;
+            margin-right: 50px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-height: 50vh;
+
+            .vacante-card{
+                margin-bottom: 40px;
+                margin-right: 5px;
+                width: 315px;
+                height: 250px;
+                box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+
+                .card-titulo{
+                    margin-left: 10px;
+                    margin-top: 15px;
+                    margin-bottom: 10px;
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 24px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .card-descripcion{
+                    margin-left: 10px;
+                    margin-top: 15px;
+                    margin-bottom: 10px;
+                    -webkit-box-orient: vertical;
+                    min-height: 40px;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 20px;
+                    letter-spacing: 0.25px;
+                }
+
+                .fecha{
+                    margin-left: 10px;
+                    margin-top: 15px;
+                    margin-bottom: 10px;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 20px;
+                    letter-spacing: 0.25px;
+                }
+
+                .ver{
+                    width: 230px;
+                    height: 40px;
+                    margin-top: 5px;
+                    align-self: center;
+                    background: linear-gradient(90deg, #46B090 0%, #1E97C6 100%);
+                    border: 0;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    border-radius: 10px;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 16px;
+                    text-align: center;
+                    letter-spacing: 1.25px;
+                    color: white;
+                    cursor: pointer;
+                }
+
+                .estado-en-curso{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 5px;
+                    justify-content: center;
+                    width: 120px;
+                    height: 35px;
+                    align-self: center;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 135%;
+                    color: #0A3066;
+                    background: #FFDEDC;
+                    border-radius: 10px;
+                    border: 0;
+                }
+
+                .estado-finalizada{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 5px;
+                    justify-content: center;
+                    width: 120px;
+                    height: 35px;
+                    align-self: center;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 135%;
+                    color: #7A2917;
+                    background: #FACDB4;;
+                    border-radius: 10px;
+                    border: 0;
+                }
+            }
+        }
+    }
+
+    
+}

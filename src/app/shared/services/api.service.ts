@@ -36,7 +36,7 @@ export class ApiService {
     }
 
     public getData(uri: string, params: any = {}) {
-        return this.get(uri, params).pipe(map((result:any)=>result.data)).toPromise();
+        return this.get(uri, params).pipe(map((result:any)=>result)).toPromise();
     }
 
     public post(uri: string, body: any, options?: any): Promise<any> {

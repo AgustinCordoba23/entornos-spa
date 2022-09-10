@@ -1,1 +1,26 @@
-<app-menu></app-menu>
+<div class="pagina">
+    <app-menu></app-menu>
+
+    <div class="contenido">
+        <span class="titulo">Vacantes</span>
+
+        <mat-divider></mat-divider>
+
+        <div class="vacantes">
+
+            <div *ngFor="let vacante of vacantes" >
+                <div class="vacante-card" [class.opacity]="obtenerEstado(vacante.fecha_fin) == 'finalizada'">
+                    <span class="card-titulo">{{vacante.catedra}}</span>
+                    <mat-divider></mat-divider>
+                    <div class="card-descripcion">{{vacante.descripcion}}</div>
+                    <div *ngIf="obtenerEstado(vacante.fecha_fin) == 'en curso'" class="estado-en-curso"><mat-icon>refresh</mat-icon> En curso</div>
+                    <div *ngIf="obtenerEstado(vacante.fecha_fin) == 'finalizada'" class="estado-finalizada"><mat-icon>check_circle_outline</mat-icon> Finalizada</div>
+                    <span class="fecha"> Finaliza el {{vacante.fecha_fin.substring(8,10)}} de {{mesHelper(vacante.fecha_fin.substring(5,7))}} de {{vacante.fecha_fin.substring(0,4)}} </span>
+                    <button type="button" class="ver">Ver</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
