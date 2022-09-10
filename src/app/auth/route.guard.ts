@@ -23,7 +23,7 @@ export class RouteGuard implements CanActivate, CanActivateChild {
     private async check(url: string | null = null) {
 
         if (this.authService.getAccessToken() != null){
-            this.router.navigate(['/home']);
+            this.router.navigate(['/']);
             return false;
         } else{
             return true;

@@ -7,30 +7,14 @@ import { RouteGuard } from './route.guard';
 
 const routes: Routes = [
 
-    // Rutas de acceso público
     {
-        path: '',
+        path: 'login',
         component: LoginComponent
     },
     {
         path: 'register',
         component: RegisterComponent
     },
-
-    // Rutas con sesión
-    /*
-    {
-        path: '',
-        canActivateChild: [LoggedInGuard],
-        children: [
-            {
-                path: 'change-password/verificar-codigo',
-                component: ChangePasswordVerificarCodigoComponent
-            },
-        ]
-    },
-    */
-
 ];
 
 @NgModule({
