@@ -27,11 +27,7 @@ export class MenuComponent implements OnInit {
 			if (usuario != null){
 				this.nombre = usuario.nombre;
 				this.rolDescripcion = usuario.rol_relacion.nombre;
-				if(usuario.rol_relacion.id == 2){
-					this.rol = 2; //responsable administrativo
-				} else {
-					this.rol = 3; //usuario logueado
-				}
+				this.rol = usuario.rol_relacion.id; 
 			} else{
 				this.rol = 0;
 			}
