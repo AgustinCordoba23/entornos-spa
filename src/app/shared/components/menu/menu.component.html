@@ -17,6 +17,11 @@
         <mat-divider></mat-divider>
 
         <div class="accesos">
+            <a class="acceso" routerLink="/">
+                <mat-icon>list</mat-icon>
+                <span>Ver Vacantes</span>
+            </a>
+
             <a class="acceso" *ngIf="rol==2" routerLink="/">
                 <mat-icon>add</mat-icon>
                 <span>Nueva Vacante</span>
