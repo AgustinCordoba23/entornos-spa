@@ -23,10 +23,10 @@ export class RouteGuard implements CanActivate, CanActivateChild {
     private async check(url: string | null = null) {
 
         if (this.authService.getAccessToken() != null){
+            return true;
+        } else{
             this.router.navigate(['/']);
             return false;
-        } else{
-            return true;
         }
     }
 
