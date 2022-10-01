@@ -5,11 +5,14 @@ import { Routes                } from '@angular/router';
 import { RouteGuard            } from './auth/route.guard';
 
 const routes: Routes = [
-
     {
         path: 'auth',
-        canActivate: [RouteGuard],
         loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule), 
+    },
+    {
+        path: 'usuarios',
+        canActivate: [RouteGuard],
+        loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule), 
     },
     {
         path: '',
