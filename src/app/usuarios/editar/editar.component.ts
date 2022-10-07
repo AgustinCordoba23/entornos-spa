@@ -16,10 +16,6 @@ export class EditarComponent implements OnInit {
     public hidePassword     : boolean = true;
 	public hideConfirmPassword : boolean = true;
 
-	public nombre : string = '';
-	public email  : string = '';
-	public rol    : string = '';
-
 	constructor(
 		private snackBar    : SnackBarService,
 		private authService : AuthService,
