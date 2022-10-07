@@ -1,0 +1,62 @@
+<div class="pagina">
+    <app-menu></app-menu>
+
+    <div class="contenido">
+        <span class="titulo">Vacante #{{vacanteId}}</span>
+
+        <mat-divider></mat-divider>
+
+        <div class="acciones">
+            <div class="informacion">
+                <table>
+                    <tr>
+                        <th style="width: 200px">Cátedra oferente:</th>
+                        <th>{{vacante.catedra}}</th>
+                    </tr>
+                    <tr>
+                        <th>Descripción:</th>
+                        <th>{{vacante.descripcion}}</th>
+                    </tr>
+                    <tr>
+                        <th>Fecha de finalización:</th>
+                        <th>{{vacante.fecha_fin.substring(8,10)}} de {{mesHelper(vacante.fecha_fin.substring(5,7))}} de {{vacante.fecha_fin.substring(0,4)}}</th>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="botones">
+                <button *ngIf="rol==2" type="button" routerLink="/"><mat-icon>edit</mat-icon>Modificar</button>
+                <button *ngIf="rol==1" type="button"><mat-icon>cloud_upload</mat-icon>Cargar Resultado</button>
+                <button *ngIf="rol==3" type="button" [disabled]="obtenerEstado(vacante.fecha_fin) == 'finalizada' ? 'disabled': null"><mat-icon>add_circle_outline</mat-icon>Postularme</button>
+            </div>
+        </div>
+
+        <table *ngIf="postulaciones.length > 0" mat-table [dataSource]="dataSource" >
+            <ng-container matColumnDef="Nombre Postulante">
+              <th mat-header-cell *matHeaderCellDef>Nombre Postulante</th>
+              <td mat-cell *matCellDef="let postulacion"> {{postulacion.nombre}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="Email Postulante">
+                <th mat-header-cell *matHeaderCellDef>Email Postulante</th>
+                <td mat-cell *matCellDef="let postulacion"> {{postulacion.email}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Orden de Mérito">
+                <th mat-header-cell *matHeaderCellDef>Orden de Mérito</th>
+                <td mat-cell *matCellDef="let postulacion"> {{postulacion.orden_merito}} </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+            <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+        </table>
+
+        <mat-paginator *ngIf="postulaciones.length > 0" [pageSizeOptions]="[5, 10, 15, 20]" [pageSize]="10" showFirstLastButtons></mat-paginator>
+    
+        <div class="vacantes-empty" *ngIf="postulaciones.length == 0">
+            Aún no existen postulaciones para esta vacante.
+        </div>
+    </div>    
+</div>
+
+

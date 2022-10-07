@@ -24,7 +24,7 @@
                     <div *ngIf="obtenerEstado(vacante.fecha_fin) == 'en curso'" class="estado-en-curso"><mat-icon>refresh</mat-icon> En curso</div>
                     <div *ngIf="obtenerEstado(vacante.fecha_fin) == 'finalizada'" class="estado-finalizada"><mat-icon>check_circle_outline</mat-icon> Finalizada</div>
                     <span class="fecha"> Finaliza el {{vacante.fecha_fin.substring(8,10)}} de {{mesHelper(vacante.fecha_fin.substring(5,7))}} de {{vacante.fecha_fin.substring(0,4)}} </span>
-                    <button type="button" class="ver">Ver</button>
+                    <button type="button" class="ver" routerLink="/ver/{{vacante.id}}">Ver</button>
                 </div>
             </div>
 

@@ -1,0 +1,124 @@
+.pagina{
+    display: flex;
+    flex-direction: row;
+
+    .contenido{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .titulo{
+            margin-left: 50px;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 118.9%;
+            color: #666666;
+            margin-top: 50px;
+            margin-bottom: 45px;
+        }
+
+        mat-divider{
+            border-top-color: rgba(166, 170, 199, 0.5);
+        }
+
+        .acciones{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-top: 20px;
+
+            .informacion{
+                display: flex;
+                width: 50%;
+
+                th{
+                    padding: 10px;
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 24px;
+                    text-align: justify;
+                }
+            }
+
+            .botones{
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                align-items: center;
+                justify-content: center;
+
+                button{
+                    display: flex;
+                    flex-direction: row;
+                    align-content: center;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    width: 360px;
+                    height: 40px;
+                    background: linear-gradient(180deg, #1A7F9D 0%, #00CA48 100%);
+                    border-radius: 8px;
+                    border: 0;
+                    margin-bottom: 10px;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 140%;
+                    color: white;
+                    cursor: pointer;
+                }
+
+                button:disabled,
+                button[disabled]{
+                    display: flex;
+                    flex-direction: row;
+                    align-content: center;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    width: 360px;
+                    height: 40px;
+                    background: grey;
+                    border-radius: 8px;
+                    border: 0;
+                    margin-bottom: 10px;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 140%;
+                    color: white;
+                    cursor: not-allowed;;
+                }
+            }
+        }
+
+        table{
+            margin-top: 50px;
+            width: 100%;
+
+            th{
+                font-weight: 600;
+                font-size: 16.48px;
+                line-height: 118.9%;
+            }
+
+            td{
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 118.9%;
+            }
+        }
+    }
+
+    .vacantes-empty{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        font-size: 20px;
+        line-height: 118.9%;
+        color: #666666;
+        margin-top: 50px;
+        margin-bottom: 45px;
+    }
+}

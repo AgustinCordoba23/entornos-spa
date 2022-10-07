@@ -5,12 +5,14 @@ import { SharedModule } from '../shared/shared.module';
 import { VacantesRoutingModule } from './vacantes-routing.module';
 import { ListarComponent } from './listar/listar.component';
 import { CrearComponent } from './crear/crear.component';
+import { VerComponent } from './ver/ver.component';
 
 
 @NgModule({
 	declarations: [
 		ListarComponent,
-		CrearComponent
+		CrearComponent,
+  VerComponent
 	],
 	imports: [
 		CommonModule,
