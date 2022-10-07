@@ -38,6 +38,51 @@
                 display: none;
             }
 
+            .textarea{
+                height: 100px;
+                margin-bottom: 55px;
+            }
+
+            textarea{
+                height: 100px;
+            }
+
+            .subir-pdf{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                width: 360px;
+                gap: 10px;
+                margin-bottom: 10px;
+
+                button{
+                    height: 30px;
+                    display: flex;
+                    flex-direction: row;
+                    padding: 15px;
+                    align-items: center;
+                    background: #0A3066;
+                    border-radius: 5px;
+                    cursor: pointer !important;
+                    border: 0;
+                    color: white;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 140%;
+                }
+
+                input{
+                    opacity: 0; 
+                    position: absolute; 
+                    left: 0px; 
+                    top: 0px; 
+                    width: 100%; 
+                    height: 100%;
+                    cursor: pointer !important;
+                }
+            }
+
             .submit-button{
                 width: 360px;
                 height: 40px;
@@ -52,6 +97,5 @@
                 cursor: pointer;
             }
         }
-        
     }
 }

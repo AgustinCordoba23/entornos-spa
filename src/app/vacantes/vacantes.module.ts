@@ -4,16 +4,24 @@ import { SharedModule } from '../shared/shared.module';
 
 import { VacantesRoutingModule } from './vacantes-routing.module';
 import { ListarComponent } from './listar/listar.component';
+import { CrearComponent } from './crear/crear.component';
+import { VerComponent } from './ver/ver.component';
+import { EditarComponent } from './editar/editar.component';
+import { PostularmeComponent } from './postularme/postularme.component';
 
 
 @NgModule({
-  declarations: [
-    ListarComponent
-  ],
-  imports: [
-    CommonModule,
-    VacantesRoutingModule,
-    SharedModule
-  ]
+	declarations: [
+		ListarComponent,
+		CrearComponent,
+  VerComponent,
+  EditarComponent,
+  PostularmeComponent
+	],
+	imports: [
+		CommonModule,
+		VacantesRoutingModule,
+		SharedModule
+	]
 })
 export class VacantesModule { }
