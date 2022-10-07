@@ -7,6 +7,7 @@ import { ListarComponent } from './listar/listar.component';
 import { CrearComponent } from './crear/crear.component';
 import { VerComponent } from './ver/ver.component';
 import { EditarComponent } from './editar/editar.component';
+import { PostularmeComponent } from './postularme/postularme.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { EditarComponent } from './editar/editar.component';
 		ListarComponent,
 		CrearComponent,
   VerComponent,
-  EditarComponent
+  EditarComponent,
+  PostularmeComponent
 	],
 	imports: [
 		CommonModule,

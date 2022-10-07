@@ -4,6 +4,7 @@ import { CrearComponent } from './crear/crear.component';
 import { ListarComponent } from './listar/listar.component';
 import { VerComponent } from './ver/ver.component';
 import { EditarComponent } from './editar/editar.component';
+import { PostularmeComponent } from './postularme/postularme.component';
 
 const routes: Routes = [
 
@@ -22,6 +23,10 @@ const routes: Routes = [
 	{
 		path: 'editar/:id',
 		component: EditarComponent,
+	},
+	{
+		path: 'postularme/:id',
+		component: PostularmeComponent,
 	},
 ];
 @NgModule({

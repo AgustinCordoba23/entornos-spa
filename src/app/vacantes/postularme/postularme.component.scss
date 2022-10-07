@@ -1,0 +1,101 @@
+.pagina{
+    display: flex;
+    flex-direction: row;
+
+    .contenido{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .titulo{
+            margin-left: 50px;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 118.9%;
+            color: #666666;
+            margin-top: 50px;
+            margin-bottom: 45px;
+        }
+
+        mat-divider{
+            border-top-color: rgba(166, 170, 199, 0.5);
+        }
+
+        form{
+            margin-left: 50px;
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+
+            mat-form-field{
+                width: 360px;
+                height: 40px;
+                margin-bottom: 25px;
+            }
+
+            ::ng-deep .mat-form-field-underline {
+                display: none;
+            }
+
+            .textarea{
+                height: 100px;
+                margin-bottom: 55px;
+            }
+
+            textarea{
+                height: 100px;
+            }
+
+            .subir-pdf{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                width: 360px;
+                gap: 10px;
+                margin-bottom: 10px;
+
+                button{
+                    height: 30px;
+                    display: flex;
+                    flex-direction: row;
+                    padding: 15px;
+                    align-items: center;
+                    background: #0A3066;
+                    border-radius: 5px;
+                    cursor: pointer !important;
+                    border: 0;
+                    color: white;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 140%;
+                }
+
+                input{
+                    opacity: 0; 
+                    position: absolute; 
+                    left: 0px; 
+                    top: 0px; 
+                    width: 100%; 
+                    height: 100%;
+                    cursor: pointer !important;
+                }
+            }
+
+            .submit-button{
+                width: 360px;
+                height: 40px;
+                background: linear-gradient(180deg, #1A7F9D 0%, #00CA48 100%);
+                border-radius: 8px;
+                border: 0;
+                margin-bottom: 10px;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 140%;
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+}
