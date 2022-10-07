@@ -1,27 +1,24 @@
-
 <div class="pagina">
-    <div class="imagen">
-        <img src="../../../../assets/images/register.png" alt="imagen-registro">
-    </div>
+    <app-menu></app-menu>
 
-    <div class="form">
-        <div class="form-box">
-            <span class="titulo">Registro</span>
-            <span class="subtitulo">Complete el formulario para registrarse </span>
+    <div class="contenido">
+        <span class="titulo">Mi cuenta</span>
 
+        <mat-divider></mat-divider>
+    
             <form [formGroup]="form" class="form-box" (ngSubmit)="submit()" [autocomplete]="false">
-                <mat-form-field appearance="outline">
+                <mat-form-field appearance="fill">
                     <mat-label>Nombre completo</mat-label>
-                    <input formControlName="nombre" matInput required>
+                    <input formControlName="nombre" matInput readonly> 
                 </mat-form-field>
 
-                <mat-form-field appearance="outline">
+                <mat-form-field appearance="fill">
                     <mat-label>Email</mat-label>
-                    <input formControlName="email" matInput required>
+                    <input formControlName="email" matInput readonly>
                 </mat-form-field>
                 
                 <mat-form-field appearance="outline">
-                    <mat-label>Contraseña</mat-label>
+                    <mat-label>Nueva contraseña</mat-label>
                     <input formControlName="password" matInput [type]="hidePassword ? 'password' : 'text'" required>
                     <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword">
                         <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -29,31 +26,25 @@
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
-                    <mat-label>Confirmar contraseña</mat-label>
+                    <mat-label>Confirmar nueva contraseña</mat-label>
                     <input formControlName="confirmarPassword" matInput [type]="hideConfirmPassword ? 'password' : 'text'" required>
                     <button mat-icon-button matSuffix type="button" (click)="hideConfirmPassword = !hideConfirmPassword">
                         <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
                 </mat-form-field>
 
-                <mat-form-field appearance="outline">
+                <mat-form-field appearance="fill">
                     <mat-label>Rol</mat-label>
-                    <mat-select formControlName="rol">
-                        <mat-option [value]=1>Jefe de Cátedra</mat-option>
-                        <mat-option [value]=2>Responsable Administrativo</mat-option>
-                        <mat-option [value]=3>Usuario</mat-option>
-                    </mat-select>
+                    <input formControlName="rol" matInput readonly>
                 </mat-form-field>
 
                 <button class="submit-button" type="submit">
-                    Registrarse
+                    Guardar Cambios
                 </button>
 
-                <div class="link">
-                    <span class="label">¿Ya tienes cuenta?</span>
-                    <a class="ingresar" routerLink="/auth/login">Ingresar</a>
-                </div>
             </form> 
-        </div>
+    
     </div>
 </div>
+
+
