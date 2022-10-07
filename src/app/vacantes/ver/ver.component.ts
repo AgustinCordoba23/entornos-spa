@@ -43,7 +43,11 @@ export class VerComponent implements OnInit {
 				this.rol = 0;
 			}
 		});
-		this.paginator._intl.itemsPerPageLabel = "Registros por página";
+		
+		if(this.postulaciones.length > 0){
+			this.paginator._intl.itemsPerPageLabel = "Registros por página";
+		}
+		
 	}
 
 	public async getVacante(){

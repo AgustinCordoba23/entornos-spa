@@ -1,30 +1,53 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { SnackBarService } from 'src/app/shared/services/snack-bar.service';
 
 @Component({
-  selector: 'app-crear',
-  templateUrl: './crear.component.html',
-  styleUrls: ['./crear.component.scss']
+  selector: 'app-editar',
+  templateUrl: './editar.component.html',
+  styleUrls: ['./editar.component.scss']
 })
-export class CrearComponent implements OnInit {
+export class EditarComponent implements OnInit {
+
+	public vacanteId! : string;
+	public vacante = {
+		catedra : '',
+		descripcion : '',
+		fecha_fin : ''
+	};
 
 	public form!            : FormGroup;
 	public minDate          : Date;
-	public fecha 			: string = '';
 
 	constructor(
-		private snackBar    : SnackBarService,
+		private route: ActivatedRoute,
 		private apiService  : ApiService,
+		private snackBar    : SnackBarService,
 		private router      : Router,
-	) {
+	) { 
+		this.vacanteId = route.snapshot.params['id'];
 		this.minDate = new Date(new Date().getTime() + 86400000);
-	 }
+	}
 
-	ngOnInit(): void {
+	async ngOnInit(){
+		this.getVacante();
 		this.setForm();
+	}
+
+	public async getVacante(){
+		let response = await this.apiService.getData(`/vacantes/${this.vacanteId}`);
+		
+		this.vacante = response['data'].vacante[0];
+
+		let fecha = this.vacante.fecha_fin.split('-');
+
+		let d = new Date(+fecha[0], +fecha[1]-1, +fecha[2]);
+
+		this.form.controls['catedra'].setValue(this.vacante.catedra);
+		this.form.controls['descripcion'].setValue(this.vacante.descripcion);
+		this.form.controls['fecha'].setValue(d);
 	}
 
 	public setForm(){
@@ -36,19 +59,24 @@ export class CrearComponent implements OnInit {
 	}
 
 	public async submit(){
-		
 		if(this.form.get("catedra")?.value == '' || this.form.get("fecha")?.value == '' || this.form.get("descripcion")?.value == ''){
 			return;
 		}	
 
-		await this.apiService.post('/vacantes', {
+		await this.apiService.put(`/vacantes/${this.vacanteId}`, {
 			catedra : this.form.get("catedra")?.value,
 			descripcion : this.form.get("descripcion")?.value, 
-			fecha_fin : this.fecha
+			fecha_fin : this.vacante.fecha_fin
 		});
 		
+		this.snackBar.show("Cambios guardados con éxito.");
+		this.router.navigateByUrl(`/ver/${this.vacanteId}`);
+    }
 
-		this.snackBar.show("Vacante creada con éxito.");
+	public async eliminar(){
+		await this.apiService.delete(`/vacantes/${this.vacanteId}`);
+		
+		this.snackBar.show("Vacante eliminada con éxito.");
 		this.router.navigateByUrl('/');
     }
 
@@ -69,8 +97,7 @@ export class CrearComponent implements OnInit {
 		this.form.get('fecha')?.setValue(d);
 
 		fecha = fecha[2] + "-" + fecha[0] + "-" + fecha[1];
-		this.fecha = fecha;
+		this.vacante.fecha_fin = fecha;
 	}
-
 
 }
