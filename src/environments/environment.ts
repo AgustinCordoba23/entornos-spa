@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  apiEndpoint : 'http://api.entornos-frro.tk:8080/api',
+  apiEndpoint : 'https://api.entornos-frro.tk:8080/api',
 };
 
 
