@@ -17,7 +17,7 @@ Correr:
 <br />
 <br />
 
-Link a la SPA (no publicada aún): www.entornos-frro.tk
+Link a la SPA: www.entornos-spa.tk
 
 
 
