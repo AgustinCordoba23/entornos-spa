@@ -9,6 +9,7 @@ import { VerComponent } from './ver/ver.component';
 import { EditarComponent } from './editar/editar.component';
 import { PostularmeComponent } from './postularme/postularme.component';
 import { MisPostulacionesComponent } from './mis-postulaciones/mis-postulaciones.component';
+import { CargarResultadosComponent } from './cargar-resultados/cargar-resultados.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { MisPostulacionesComponent } from './mis-postulaciones/mis-postulaciones
 		VerComponent,
 		EditarComponent,
 		PostularmeComponent,
-		MisPostulacionesComponent
+		MisPostulacionesComponent,
+  		CargarResultadosComponent
 	],
 	imports: [
 		CommonModule,

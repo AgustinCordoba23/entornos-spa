@@ -44,9 +44,7 @@ export class VerComponent implements OnInit {
 			}
 		});
 		
-		if(this.postulaciones.length > 0){
-			this.paginator._intl.itemsPerPageLabel = "Registros por página";
-		}
+		this.paginator._intl.itemsPerPageLabel="Registros por página";
 		
 	}
 
