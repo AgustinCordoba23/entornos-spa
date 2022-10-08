@@ -63,6 +63,8 @@ export class RegisterComponent implements OnInit {
 			this.form.get("rol")?.value,
 		);
 		this.router.navigateByUrl('/auth/login');
+
+		this.snackBar.show("Cuenta creada con éxito.");
 		
     }
 

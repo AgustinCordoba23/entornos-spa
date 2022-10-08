@@ -84,4 +84,8 @@ export class PostularmeComponent implements OnInit {
 		}
 	}
 
+	public volver(){
+		this.router.navigateByUrl(`/ver/${this.vacanteId}`);
+	}
+
 }

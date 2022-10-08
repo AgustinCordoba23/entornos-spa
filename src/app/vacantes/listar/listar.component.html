@@ -15,7 +15,7 @@
             </form>
         </div>
 
-        <div class="vacantes">
+        <div *ngIf="vacantes.length > 0" class="vacantes">
             <div *ngFor="let vacante of vacantes" >
                 <div class="vacante-card" [class.opacity]="obtenerEstado(vacante.fecha_fin) == 'finalizada'">
                     <span class="card-titulo">{{vacante.catedra}}</span>
@@ -27,8 +27,12 @@
                     <button type="button" class="ver" routerLink="/ver/{{vacante.id}}">Ver</button>
                 </div>
             </div>
-
         </div>
+
+        <div class="vacantes-empty" *ngIf="vacantes.length == 0">
+            No existen vacantes que coincidan con la búsqueda.
+        </div>
+
     </div>
 </div>
 

@@ -26,7 +26,7 @@
 
             <div class="botones">
                 <button *ngIf="rol==2" type="button" routerLink="/editar/{{vacanteId}}"><mat-icon>edit</mat-icon>Modificar</button>
-                <button *ngIf="rol==1" type="button"><mat-icon>cloud_upload</mat-icon>Cargar Resultado</button>
+                <button *ngIf="rol==1" type="button" [disabled]="obtenerEstado(vacante.fecha_fin) != 'finalizada' ? 'disabled': null" routerLink="/cargar-resultados/{{vacanteId}}"><mat-icon>cloud_upload</mat-icon>Cargar Resultado</button>
                 <button *ngIf="rol==3" type="button" [disabled]="obtenerEstado(vacante.fecha_fin) == 'finalizada' ? 'disabled': null" routerLink="/postularme/{{vacanteId}}"><mat-icon>add_circle_outline</mat-icon>Postularme</button>
             </div>
         </div>
@@ -44,7 +44,7 @@
 
             <ng-container matColumnDef="Orden de Mérito">
                 <th mat-header-cell *matHeaderCellDef>Orden de Mérito</th>
-                <td mat-cell *matCellDef="let postulacion"> {{postulacion.orden_merito}} </td>
+                <td mat-cell *matCellDef="let postulacion"> {{postulacion.orden}} </td>
             </ng-container>
         
             <tr mat-header-row *matHeaderRowDef="columnas"></tr>

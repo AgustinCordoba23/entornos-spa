@@ -6,6 +6,7 @@ import { VerComponent } from './ver/ver.component';
 import { EditarComponent } from './editar/editar.component';
 import { PostularmeComponent } from './postularme/postularme.component';
 import { MisPostulacionesComponent } from './mis-postulaciones/mis-postulaciones.component';
+import { CargarResultadosComponent } from './cargar-resultados/cargar-resultados.component';
 
 const routes: Routes = [
 
@@ -32,6 +33,10 @@ const routes: Routes = [
 	{
 		path: 'mis-postulaciones',
 		component: MisPostulacionesComponent,
+	},
+	{
+		path: 'cargar-resultados/:id',
+		component: CargarResultadosComponent,
 	},
 ];
 @NgModule({

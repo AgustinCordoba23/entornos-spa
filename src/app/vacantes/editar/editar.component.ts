@@ -100,4 +100,8 @@ export class EditarComponent implements OnInit {
 		this.vacante.fecha_fin = fecha;
 	}
 
+	public volver(){
+		this.router.navigateByUrl(`/ver/${this.vacanteId}`);
+	}
+
 }
