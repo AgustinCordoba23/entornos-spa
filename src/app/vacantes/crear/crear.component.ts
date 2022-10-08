@@ -72,5 +72,9 @@ export class CrearComponent implements OnInit {
 		this.fecha = fecha;
 	}
 
+	public volver(){
+		this.router.navigateByUrl(`/`);
+	}
+
 
 }

@@ -33,8 +33,13 @@
 
         <mat-paginator *ngIf="postulaciones.length > 0" [pageSizeOptions]="[5, 10, 15, 20]" [pageSize]="10" showFirstLastButtons></mat-paginator>
 
+        <div class="vacantes-empty" *ngIf="postulaciones.length == 0">
+            No existen postulaciones para esta vacante.
+        </div>
+        
         <div class="finalizar">
-            <button type="button" class="submit-button" (click)="cargarResultado()">Finalizar</button>
+            <button class="volver-button" type="button" (click)="volver()">Volver</button>
+            <button type="button" class="submit-button" [disabled]="postulaciones.length == 0"  (click)="cargarResultado()">Finalizar</button>
         </div>
         
     </div>

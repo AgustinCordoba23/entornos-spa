@@ -32,8 +32,6 @@ export class CargarResultadosComponent implements OnInit {
 
 	ngOnInit(){
 		this.getPostulaciones();
-		
-		this.paginator._intl.itemsPerPageLabel="Registros por página";
 	}
 
 	public async getPostulaciones(){
@@ -101,6 +99,10 @@ export class CargarResultadosComponent implements OnInit {
 		this.snackBar.show("Resultados guardados con éxito.");
 		this.router.navigateByUrl(`/ver/${this.vacanteId}`);
 		
+	}
+
+	public volver(){
+		this.router.navigateByUrl(`/ver/${this.vacanteId}`);
 	}
 
 }

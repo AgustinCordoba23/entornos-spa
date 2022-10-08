@@ -24,14 +24,10 @@ export class MisPostulacionesComponent implements OnInit {
 
 	constructor(
 		private apiService : ApiService,
-		private http     : HttpClient,
 	) { }
 
 	ngOnInit(): void {
 		this.setListado();
-		if(this.postulaciones.length > 0){
-			this.paginator._intl.itemsPerPageLabel="Registros por página";
-		}
 	}
 
 	public async setListado(){

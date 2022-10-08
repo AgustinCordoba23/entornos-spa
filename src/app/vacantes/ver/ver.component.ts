@@ -42,10 +42,7 @@ export class VerComponent implements OnInit {
 			} else{
 				this.rol = 0;
 			}
-		});
-		
-		this.paginator._intl.itemsPerPageLabel="Registros por página";
-		
+		});	
 	}
 
 	public async getVacante(){

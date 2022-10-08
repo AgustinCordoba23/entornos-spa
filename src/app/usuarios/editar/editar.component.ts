@@ -58,4 +58,8 @@ export class EditarComponent implements OnInit {
 		this.router.navigateByUrl('/');
     }
 
+	public volver(){
+		this.router.navigateByUrl(`/`);
+	}
+
 }
