@@ -8,7 +8,7 @@ Link: http://www.entornos-spa.tk/
 
 ## API
 
-Link a repositorio API repository: https://github.com/AgustinCordoba23/entornos-api
+Link a repositorio API: https://github.com/AgustinCordoba23/entornos-api
 
 
 
