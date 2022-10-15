@@ -1,23 +1,15 @@
 # Entornos Gráficos [UTN - FRRo]
 
 Repositorio de servidor Frontend basado en Angular para el Trabajo Práctico Integrador 2022 C2.
-<br />
-<br />
 
-Instalar Angular:
-1. `sudo apt install npm`
-2. `sudo npm install -g @angular/cli`
-3. Actualizar Node.js
-4. (en el repo) `npm install`
-<br />
+## Deploy
 
-Correr:
-1. `ng serve --open`
+Link: http://www.entornos-spa.tk/
 
-<br />
-<br />
+## API
 
-Link a la SPA: www.entornos-spa.tk
+Link a repositorio API repository: https://github.com/AgustinCordoba23/entornos-api
+
 
 
 
