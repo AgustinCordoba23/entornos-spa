@@ -25,7 +25,7 @@ export class RouteGuard implements CanActivate, CanActivateChild {
         if (this.authService.getAccessToken() != null){
             return true;
         } else{
-            this.router.navigate(['/']);
+            this.router.navigate(['/auth/login']);
             return false;
         }
     }

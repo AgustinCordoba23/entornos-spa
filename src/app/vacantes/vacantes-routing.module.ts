@@ -7,6 +7,7 @@ import { EditarComponent } from './editar/editar.component';
 import { PostularmeComponent } from './postularme/postularme.component';
 import { MisPostulacionesComponent } from './mis-postulaciones/mis-postulaciones.component';
 import { CargarResultadosComponent } from './cargar-resultados/cargar-resultados.component';
+import { RouteGuard } from '../auth/route.guard';
 
 const routes: Routes = [
 
@@ -16,26 +17,32 @@ const routes: Routes = [
 	},
 	{
 		path: 'crear',
+		canActivate: [RouteGuard],
 		component: CrearComponent
 	},
 	{
 		path: 'ver/:id',
+		canActivate: [RouteGuard],
 		component: VerComponent,
 	},
 	{
 		path: 'editar/:id',
+		canActivate: [RouteGuard],
 		component: EditarComponent,
 	},
 	{
 		path: 'postularme/:id',
+		canActivate: [RouteGuard],
 		component: PostularmeComponent,
 	},
 	{
 		path: 'mis-postulaciones',
+		canActivate: [RouteGuard],
 		component: MisPostulacionesComponent,
 	},
 	{
 		path: 'cargar-resultados/:id',
+		canActivate: [RouteGuard],
 		component: CargarResultadosComponent,
 	},
 ];

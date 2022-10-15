@@ -14,6 +14,7 @@ export class CrearComponent implements OnInit {
 	public form!            : FormGroup;
 	public minDate          : Date;
 	public fecha 			: string = '';
+	public fechaHint		: string = '';
 
 	constructor(
 		private snackBar    : SnackBarService,
@@ -36,7 +37,6 @@ export class CrearComponent implements OnInit {
 	}
 
 	public async submit(){
-		
 		if(this.form.get("catedra")?.value == '' || this.form.get("fecha")?.value == '' || this.form.get("descripcion")?.value == ''){
 			return;
 		}	
@@ -70,11 +70,42 @@ export class CrearComponent implements OnInit {
 
 		fecha = fecha[2] + "-" + fecha[0] + "-" + fecha[1];
 		this.fecha = fecha;
+
+		this.fechaHint = this.fecha.substring(8,10) + " de " + this.mesHelper(this.fecha.substring(5,7)) + " de "
+			+ this.fecha.substring(0,4);
 	}
 
 	public volver(){
 		this.router.navigateByUrl(`/`);
 	}
 
-
+	public mesHelper(mes : string){
+        switch(mes){
+            case "01":
+                return "Enero";
+            case "02":
+                return "Febrero";
+            case "03":
+                return "Marzo";
+            case "04":
+                return "Abril";
+            case "05":
+                return "Mayo";
+            case "06":
+                return "Junio";
+            case "07":
+                return "Julio";
+            case "08":
+                return "Agosto";
+            case "09":
+                return "Septiembre";
+            case "10":
+                return "Octubre";
+            case "11":
+                return "Noviembre";
+            case "12":
+                return "Diciembre";
+        }
+        return "";
+    }
 }
