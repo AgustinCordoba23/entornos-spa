@@ -9,33 +9,38 @@
             <form [formGroup]="form" class="form-box" (ngSubmit)="submit()" [autocomplete]="false">
                 <mat-form-field appearance="fill">
                     <mat-label>Nombre completo</mat-label>
-                    <input formControlName="nombre" matInput readonly> 
+                    <label for="nombre" hidden>Nombre completo</label>
+                    <input id="nombre" name="nombre" formControlName="nombre" matInput readonly> 
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
                     <mat-label>Email</mat-label>
-                    <input formControlName="email" matInput readonly>
+                    <label for="email" hidden>Email</label>
+                    <input id="email" name="email" formControlName="email" matInput readonly>
                 </mat-form-field>
                 
                 <mat-form-field appearance="outline">
                     <mat-label>Nueva contraseña</mat-label>
-                    <input formControlName="password" matInput [type]="hidePassword ? 'password' : 'text'" required>
+                    <label for="nueva-password" hidden>Nueva contraseña</label>
+                    <input id="nueva-password" name="nueva-password" formControlName="password" matInput [type]="hidePassword ? 'password' : 'text'" required>
                     <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword">
-                        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        <mat-icon alt="icono-password">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
                     <mat-label>Confirmar nueva contraseña</mat-label>
-                    <input formControlName="confirmarPassword" matInput [type]="hideConfirmPassword ? 'password' : 'text'" required>
+                    <label for="confirmar-nueva-password" hidden>Confirmar nueva contraseña</label>
+                    <input id="confirmar-nueva-password" name="confirmar-nueva-password" formControlName="confirmarPassword" matInput [type]="hideConfirmPassword ? 'password' : 'text'" required>
                     <button mat-icon-button matSuffix type="button" (click)="hideConfirmPassword = !hideConfirmPassword">
-                        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        <mat-icon alt="icono-password">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
                     <mat-label>Rol</mat-label>
-                    <input formControlName="rol" matInput readonly>
+                    <label for="rol" hidden>Rol</label>
+                    <input id="rol" name="rol" formControlName="rol" matInput readonly>
                 </mat-form-field>
 
                 <button class="submit-button" type="submit">

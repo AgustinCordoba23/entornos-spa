@@ -1,6 +1,6 @@
 <div class="pagina">
     <div class="imagen">
-        <img src="../../../../assets/images/login.png" alt="imagen-login">
+        <img alt="imagen-login" src="../../../../assets/images/login.png">
     </div>
 
     <div class="form">
@@ -11,14 +11,16 @@
             <form [formGroup]="form" class="form-box" (ngSubmit)="submit()" [autocomplete]="false">
                 <mat-form-field appearance="outline">
                     <mat-label>Email</mat-label>
-                    <input formControlName="email" matInput required>
+                    <label for="email" hidden>Email</label>
+                    <input name="email" id="email" formControlName="email" matInput required>
                 </mat-form-field>
                 
                 <mat-form-field appearance="outline">
                     <mat-label>Contraseña</mat-label>
-                    <input formControlName="password" matInput [type]="hidePassword ? 'password' : 'text'" required>
+                    <label for="password" hidden>Contraseña</label>
+                    <input name="password" id="password" formControlName="password" matInput [type]="hidePassword ? 'password' : 'text'" required>
                     <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword">
-                        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        <mat-icon alt="icono-password">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
                 </mat-form-field>
 
