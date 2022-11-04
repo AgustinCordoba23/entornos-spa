@@ -9,19 +9,21 @@
         <div class="container-filtros">
 
             <div class="titulo-filtros">
-                <mat-icon>filter_list</mat-icon>
+                <mat-icon alt="filtrar">filter_list</mat-icon>
                 <span>Filtros</span>
             </div>
 
             <form [formGroup]="form" (ngSubmit)="filtrar()" [autocomplete]="false">
                 <mat-form-field appearance="outline">
                     <mat-label>Nombre completo</mat-label>
-                    <input formControlName="nombre" matInput>
+                    <label for="nombre" hidden>Nombre completo</label>
+                    <input id="nombre" name="nombre" formControlName="nombre" matInput>
                 </mat-form-field>
                 
                 <mat-form-field appearance="outline">
                     <mat-label>Rol</mat-label>
-                    <mat-select formControlName="rol">
+                    <label for="rol" hidden>Rol</label>
+                    <mat-select title="rol" name="rol" id="rol" formControlName="rol">
                         <mat-option [value]=1>Jefe de Cátedra</mat-option>
                         <mat-option [value]=2>Responsable Administrativo</mat-option>
                         <mat-option [value]=3>Usuario</mat-option>
@@ -30,7 +32,8 @@
 
                 <mat-form-field appearance="outline">
                     <mat-label>Estado</mat-label>
-                    <mat-select formControlName="estado">
+                    <label for="estado" hidden>Estado</label>
+                    <mat-select id="estado" name="estado" formControlName="estado">
                         <mat-option [value]=1>Habilitado</mat-option>
                         <mat-option [value]=2>Pendiente</mat-option>
                         <mat-option [value]=3>Deshabilitado</mat-option>
