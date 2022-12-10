@@ -68,4 +68,8 @@ export class RegisterComponent implements OnInit {
 		
     }
 
+	public volver(){
+		this.router.navigateByUrl(`/`);
+	}
+
 }

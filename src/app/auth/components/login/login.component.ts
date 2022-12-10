@@ -54,4 +54,8 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('/');
 		
     }
+
+    public volver(){
+		this.router.navigateByUrl(`/`);
+	}
 }
