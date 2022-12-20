@@ -4,7 +4,9 @@ Repositorio de servidor Frontend basado en Angular para el Trabajo Práctico Int
 
 ## Deploy
 
-Link: http://www.entornos-spa.tk/
+Deshabilitado desde 20/12/2022
+
+Link: http://www.entornos-spa.tk/ 
 
 ## API
 
